@@ -5,6 +5,7 @@ const handleError = require('./middlewares/error');
 //routes
 const usersRoutes = require('./routes/users.routes');
 const tasksRoutes = require('./routes/tasks.routes');
+const authRoutes = require('./routes/auth.routes');
 
 //init app
 const app = express();
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1', usersRoutes);
 app.use('/api/v1', tasksRoutes);
+app.use('/api/v1', authRoutes);
 
 app.use(handleError)
 

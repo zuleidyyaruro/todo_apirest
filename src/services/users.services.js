@@ -77,7 +77,8 @@ class UserServices {
 
     static async add(newUser) {
         try {
-            return await User.create(newUser);
+            await User.create(newUser);
+            return 'Usuario creado correctamente'
         } catch (error) {
             throw error;
         }

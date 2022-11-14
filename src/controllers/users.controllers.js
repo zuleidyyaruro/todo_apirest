@@ -60,7 +60,10 @@ const createUser = async (req, res, next) => {
         const newUser = req.body;
         console.log(newUser);
         const result = await UsersService.add(newUser);
-        res.status(201).json(result);
+        res.status(201).json({
+            status:'success',
+            result
+        });
     } catch (error) {
         next({
             status: 400,
